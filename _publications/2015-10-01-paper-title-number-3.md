@@ -2,7 +2,7 @@
 title: "Making hard choices: trilemmas and dilemmas of macroeconomic policy in Latin America"
 collection: publications
 category: manuscripts
-permalink: /publication/2015-10-01-paper-title-number-3
+permalink: /publication/2019-09-marking-hard-choices
 excerpt: 'Testing the linearity of the trilemma of macroeconomic policy in Colombia, Chile, Mexico and Peru.'
 date: 2019-09-01
 venue: 'Economía Chilena (Central Bank of Chile)'
