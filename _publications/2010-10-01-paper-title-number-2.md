@@ -7,7 +7,7 @@ excerpt: 'Explores the effectiveness of the exchange interventions of the Centra
 date: 2016-06-01
 venue: 'Estudios Económicos 31'
 slidesurl: ''
-paperurl: 'http://academicpages.github.io/files/paper2.pdf](https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/31/ree-31-durand.pdf'
+paperurl: 'https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/31/ree-31-durand.pdf'
 citation: ''
 ---
 
