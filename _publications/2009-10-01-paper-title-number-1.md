@@ -1,7 +1,7 @@
 ---
 title: "Do Foreign Exchange Interventions Work as Coordinating Signals in Colombia?"
 collection: publications
-category: journal article
+category: manuscripts
 permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: 'Analyses the effectiveness of official interventions of the Colombian Central Bank in the foreign exchange market using threshold models.'
 date: 2015-08-01
