@@ -1,14 +1,14 @@
 ---
-title: "Paper Title Number 2"
+title: "Un Análisis de la Efectividad de las Intervenciones Cambiarias en el Perú"
 collection: publications
 category: manuscripts
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+permalink: /publication/2016-06-01-peru-exchange-interventions
+excerpt: 'Explores the effectiveness of the exchange interventions of the Central Reserve Bank of Peru (BCRP) in the spot exchange market over 2003-2015 using event studies and threshold models. '
+date: 2016-06-01
+venue: 'Estudios Económicos 31'
+slidesurl: ''
+paperurl: 'http://academicpages.github.io/files/paper2.pdf](https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/31/ree-31-durand.pdf'
+citation: ''
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+Beyond their role as international reserve accumulation operations, official exchange market interventions are becoming less frequent as macroeconomic policy tools. In the Peruvian case, however, the economic authorities have actively carried out this type of intervention over recent years. This article explores the effectiveness of the exchange interventions of the Central Reserve Bank of Peru (BCRP) in the spot exchange market during the period 2003-2015 using event studies and threshold modls. The evidence suggests that BCRP interventions were effective in smoothing the volatility of the exchange rate and generating movements opposite to its trend in periods of extreme volatility in the exchange market.
