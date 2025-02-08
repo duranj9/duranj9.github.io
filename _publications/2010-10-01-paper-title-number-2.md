@@ -5,7 +5,7 @@ category: manuscripts
 permalink: /publication/2016-06-01-peru-exchange-interventions
 excerpt: 'Explores the effectiveness of the exchange interventions of the Central Reserve Bank of Peru (BCRP) in the spot exchange market over 2003-2015 using event studies and threshold models. '
 date: 2016-06-01
-venue: 'Estudios Económicos 31'
+venue: 'Estudios Económicos (Central Bank of Peru)'
 slidesurl: ''
 paperurl: 'https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/31/ree-31-durand.pdf'
 citation: ''
