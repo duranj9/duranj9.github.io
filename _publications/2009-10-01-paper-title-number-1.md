@@ -7,7 +7,7 @@ excerpt: 'Analyses the effectiveness of official interventions of the Colombian 
 date: 2015-08-01
 venue: 'Ensayos sobre Política Económica 33 (Central Bank of Colombia)'
 slidesurl: ''
-paperurl: 'https://repositorio.banrep.gov.co/server/api/core/bitstreams/e661acca-82de-4bfc-ab04-b2419673a099/content'
+paperurl: '[https://repositorio.banrep.gov.co/server/api/core/bitstreams/e661acca-82de-4bfc-ab04-b2419673a099/content](https://repositorio.banrep.gov.co/server/api/core/bitstreams/e661acca-82de-4bfc-ab04-b2419673a099/content)'
 citation: ''
 ---
 
