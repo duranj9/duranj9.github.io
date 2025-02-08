@@ -5,7 +5,7 @@ category: journal article
 permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: 'Analyses the effectiveness of official interventions of the Colombian Central Bank in the foreign exchange market using threshold models.'
 date: 2015-08-01
-venue: 'Ensayos sobre Política Económica 33'
+venue: 'Ensayos sobre Política Económica 33 (Central Bank of Colombia)'
 slidesurl: ''
 paperurl: 'https://repositorio.banrep.gov.co/server/api/core/bitstreams/e661acca-82de-4bfc-ab04-b2419673a099/content'
 citation: ''
