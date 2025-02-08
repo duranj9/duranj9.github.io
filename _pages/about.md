@@ -7,8 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-======
-
 Welcome to my website!
 
 I am an applied economist mainly interested in the fields of **Labor, Regional, Development, and International Economics**. Currently, I am a **Postdoctoral Research Fellow** at the [Economic and Social Research Institute (ESRI)](https://www.esri.ie/) in the area of Trade, Competitiveness, and Foreign Direct Investment.
