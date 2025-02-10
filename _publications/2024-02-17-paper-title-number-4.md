@@ -1,13 +1,14 @@
 ---
-title: "Paper Title Number 4"
+title: "Inward Foreign Direct Investment, Superstar Firms and Wage Inequality between Firms: Evidence from European Regions"
 collection: publications
 category: conferences
 permalink: /publication/2024-02-17-paper-title-number-4
-excerpt: 'This paper is about fixing template issue #693.'
+excerpt: 'with [Iulia Siedschlag](https://www.esri.ie/people/iulia-siedschlag)
+Revisions requested at _The World Economy_'
 date: 2024-02-17
-venue: 'GitHub Journal of Bugs'
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+venue: ''
+paperurl: 'https://www.esri.ie/publications/inward-foreign-direct-investment-superstar-firms-and-wage-inequality-between-firms#:~:text=Theoretical%20models%20and%20international%20evidence,inequality%20in%20the%20host%20countries'
+citation: ''
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+This paper empirically investigates the impact of inward foreign direct investment, with a focus on multinational firms holding dominant market shares (i.e. superstar firms), on wage dispersion between firms across European regions. The analysis uses firm-level data from the ORBIS Europe data set over 2012-2021 combined with a range of economic and social data at the regional level. Using a shift-share instrumental variables approach, we find that foreign direct investment, particularly international superstar firms, contributed to increased wage inequality between firms across European regions.
