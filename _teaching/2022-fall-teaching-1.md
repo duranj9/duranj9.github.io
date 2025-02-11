@@ -1,7 +1,7 @@
 ---
 title: "Introductory Mathematics (MSc in Economics)"
 collection: teaching
-type: "Postgraduate course"
+type: "Undergraduate course"
 permalink: /teaching/2022-fall-teaching-1
 venue: "Trinity College Dublin, Department of Economics"
 date: 2022
