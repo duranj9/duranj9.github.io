@@ -1,5 +1,5 @@
 ---
-title: "The Effects of Artificial Intelligence on Labor Market Outcomes, Job Satisfaction and Perceived Health: Evidence from Australia [with [Dora Tuda](https://www.esri.ie/people/dora-tuda)"]
+title: "The Effects of Artificial Intelligence on Labor Market Outcomes, Job Satisfaction and Perceived Health: Evidence from Australia [with [Dora Tuda](https://www.esri.ie/people/dora-tuda)]"
 collection: publications
 category: conferences
 permalink: /publication/2024-02-ai_labor
