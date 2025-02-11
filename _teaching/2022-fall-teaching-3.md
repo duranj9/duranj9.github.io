@@ -1,12 +1,12 @@
 ---
-title: "Introductory Mathematics (MSc in Economics)"
+title: "Microeconomics III"
 collection: teaching
-type: "Postgraduate course"
-permalink: /teaching/2022-fall-teaching-1
-venue: "Trinity College Dublin, Department of Economics"
-date: 2022-09-01
-location: "Dublin, Ireland"
+type: "Undergraduate course"
+permalink: /teaching/2016-fall-teaching-1
+venue: "Universidad Nacional de Colombia, Department of Economic Sciences"
+date: 2016-09-01
+location: "Bogota, Colombia"
 ---
 
-Main contents: Optimization, Calculus, and Differential Equations
+Main contents: Game Theory, Industrial Organization
 
