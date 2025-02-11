@@ -2,7 +2,7 @@
 title: "Regional Industry Transformation, Labor Demand, and Local Gender Gaps"
 collection: publications
 category: conferences
-venue: ''
+venue: 
 permalink: /publication/2024-02-gender-gaps
 excerpt: 'Revisions requested at _Journal of Regional Science_'
 
