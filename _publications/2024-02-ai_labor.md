@@ -3,7 +3,7 @@ title: "The Effects of Artificial Intelligence on Labor Market Outcomes, Job Sat
 collection: publications
 category: conferences
 permalink: /publication/2024-02-ai_labor
-
+excerpt: ''
 ---
 ![paper logo](/images/all_base-1.png)
 
