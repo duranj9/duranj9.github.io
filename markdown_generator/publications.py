@@ -81,6 +81,7 @@ for row, item in publications.iterrows():
     
     md += "\ndate: " + str(item.pub_date) 
     
+     if len(str(item.venue)) > 5:
     md += "\nvenue: '" + html_escape(item.venue) + "'"
     
     if len(str(item.paper_url)) > 5:
