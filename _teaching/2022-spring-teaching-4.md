@@ -1,14 +1,14 @@
 ---
-title: "Mathematical & Statistical Methods (2nd year)"
+title: "Intermediate Economics (2nd year)    "
 collection: teaching
 type: "Teaching Assistant - Undergraduate course"
-permalink: /teaching/2018-spring-teaching-1
+permalink: /teaching/2020-spring-teaching-1
 venue: "Trinity College Dublin, Department of Economics"
-date: 2018-09-01
+date: 2020-09-01
 location: "Dublin, Ireland"
 ---
 
-Lecturers: Andrea Guariso, Michael Wycherley, and Nicola Fontana. 
-Main contents: calculus, optimization, statistical inference
-2018-22
+Lecturer: Francis O'Toole.
+Main contents: consumer and production theory
+2020-21
 
