@@ -3,11 +3,11 @@ title: "Spatial Equilibrium and the Regional Effects of Trade Liberalization"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-02-spatial-mex-liberalization
-excerpt: 'Tests the linearity of the trilemma of macroeconomic policy in Colombia, Chile, Mexico and Peru.'
+excerpt: 'Studies the local effects of trade liberalization on college wage premia, housing costs, and urban amenities.'
 date: 2019-09-01
 venue: 'Economía LACEA'
 paperurl: 'https://repositoriodigital.bcentral.cl/xmlui/bitstream/handle/20.500.12580/3607/BCCh-rec-v22n2ago2019p022-038.pdf?sequence=1&isAllowed=y'
 ---
 ![paper logo3](/images/regional-trade.jpg)
 
-Studies the local effects of trade liberalization on college wage premia, housing costs, and urban amenities.
+This paper uses the 1994 North American Free Trade Agreement (NAFTA) and granular data on Mexican municipalities to study the local effects of trade liberalization on college wage premia, housing costs, and urban amenities between 1990 and 2010. I measure local exposure to international trade by constructing a market access database of each municipality's lowest-cost route to the closest US truck port. I find that municipalities facing larger trade exposure experienced: (1) declines in local wage differences between college and noncollege graduates, both in nominal and real terms; (2) smaller increases in local urban amenities. I interpret these results under the notion of spatial equilibrium in which non-monetary urban amenities compensate for gaps in real wages across cities.
