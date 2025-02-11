@@ -8,7 +8,7 @@ date: 2018-09-01
 location: "Dublin, Ireland"
 ---
 
-Lecturers: Andrea Guariso, Michael Wycherley, and Nicola Fontana
+Lecturers: Andrea Guariso, Michael Wycherley, and Nicola Fontana. 
 Main contents: calculus, optimization, statistical inference
 2018-22
 
