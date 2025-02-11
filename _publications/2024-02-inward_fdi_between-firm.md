@@ -1,5 +1,5 @@
 ---
-title: "Inward Foreign Direct Investment, Superstar Firms and Wage Inequality between Firms: Evidence from European Regions [with [Iulia Siedschlag](https://www.esri.ie/people/iulia-siedschlag)]"
+title: "Inward Foreign Direct Investment, Superstar Firms and Wage Inequality between Firms: Evidence from European Regions [with [<p style="color:blue;"> Iulia Siedschlag</p>](https://www.esri.ie/people/iulia-siedschlag)]"
 collection: publications
 category: conferences
 permalink: /publication/2024-02-inward_fdi_between-firm
