@@ -1,12 +1,12 @@
 ---
-title: "Introductory Mathematics (MSc in Economics)"
+title: "Applied Economics  (4th year) "
 collection: teaching
-type: "Postgraduate course"
-permalink: /teaching/2022-fall-teaching-1
+type: "Undergraduate course"
+permalink: /teaching/2022-fall-teaching-2
 venue: "Trinity College Dublin, Department of Economics"
 date: 2022-09-01
 location: "Dublin, Ireland"
 ---
 
-Main contents: Optimization, Calculus, and Differential Equations
+Main contents: Urban Economics
 
