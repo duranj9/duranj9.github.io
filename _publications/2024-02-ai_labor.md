@@ -3,7 +3,7 @@ title: "The Effects of Artificial Intelligence on Labor Market Outcomes, Job Sat
 collection: publications
 category: conferences
 permalink: /publication/2024-02-ai_labor
-excerpt: ''
+excerpt: 'Analyzes the effect of exposure to AI at the occupation level on labor market outcomes and workers' wellbeing using Australian longitudinal data-HILDA.'
 ---
 ![paper logo](/images/all_base-1.png)
 
