@@ -3,7 +3,7 @@ title: "Inward Foreign Direct Investment, Superstar Firms and Wage Inequality be
 collection: publications
 category: conferences
 permalink: /publication/2024-02-inward_fdi_between-firm
-excerpt: 'Revisions requested at _The World Economy_ <br /> Studies the effect of MNEs presence on on between-firm wage inequality across European regions between 2012-2021 using ORBIS.'
+excerpt: 'Revise and resubmit, _The World Economy_ <br /> Studies the effect of MNEs presence on on between-firm wage inequality across European regions between 2012-2021 using ORBIS.'
 paperurl: 'https://www.esri.ie/publications/inward-foreign-direct-investment-superstar-firms-and-wage-inequality-between-firms#:~:text=Theoretical%20models%20and%20international%20evidence,inequality%20in%20the%20host%20countries'
 ---
 
