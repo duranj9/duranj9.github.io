@@ -4,7 +4,7 @@ collection: publications
 category: conferences
 venue: 
 permalink: /publication/2024-02-gender-gaps
-excerpt: 'Revisions requested at _Journal of Regional Science_  <br /> Studies the impact of industry-specific labor demand shocks on local gender gaps across urban size using Mexican census data between 1990-2010.'
+excerpt: 'Revise and resubmit,  _Journal of Regional Science_  <br /> Studies the impact of industry-specific labor demand shocks on local gender gaps across urban size using Mexican census data between 1990-2010.'
 
 ---
 ![paper logo](/images/gender-gaps.jpg)
