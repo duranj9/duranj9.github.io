@@ -1,5 +1,5 @@
 ---
-title: "The effects of investment in education and training on productivity growth in the European Union [with [Iulia Siedschlag](https://www.esri.ie/people/iulia-siedschlag)]"
+title: "The Effects of Investment in Education and Training on Productivity Growth in the European Union [with [Iulia Siedschlag](https://www.esri.ie/people/iulia-siedschlag)]"
 collection: publications
 category: conferences
 permalink: /publication/2025-06-training-productivity
