@@ -4,7 +4,7 @@ category: manuscripts
 permalink: /publication/2024-02-gender-gaps
 excerpt: 'Studies trade-induced changes in local industry structure and regional gender gaps in employment hours across Mexican Metropolitan Zones.'
 date: 2025-07-13
-venue: 'Economía Chilena (Central Bank of Chile)'
+venue: 'Journal of Regional Science'
 paperurl: 'https://onlinelibrary.wiley.com/doi/10.1111/jors.70003'
 ---
 ![paper logo](/images/gender-gaps.jpg)
