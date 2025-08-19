@@ -3,7 +3,7 @@ title: "The Effects of Investment in Education and Training on Productivity Grow
 collection: publications
 category: conferences
 permalink: /publication/2025-06-training-productivity
-excerpt:  <br /> Studies the impact of on-the-job training on labour productivity using EUKLEMS & INTANProd data.'
+excerpt:  'Studies the impact of on-the-job training on labour productivity using EUKLEMS & INTANProd data.'
 paperurl: 'https://www.esri.ie/publications/the-effects-of-investment-in-education-and-training-on-productivity-growth-in-the'
 ---
 
