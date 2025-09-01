@@ -4,7 +4,7 @@ collection: publications
 category: conferences
 permalink: /publication/2024-02-ai_labor
 excerpt: Analyzes the effect of exposure to AI at the occupation level on labor market outcomes and workers wellbeing using Australian longitudinal data-HILDA.
-paperurl: '[www.esri.ie/publications/the-impact-of-ai-exposure-on-labour-market-outcomes-and-well-being-evidence-from](https://www.esri.ie/publications/the-impact-of-ai-exposure-on-labour-market-outcomes-and-well-being-evidence-from)'
+paperurl: 'https://www.esri.ie/publications/the-impact-of-ai-exposure-on-labour-market-outcomes-and-well-being-evidence-from'
 
 ---
 ![paper logo](/images/all_base-1.png)
