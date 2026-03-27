@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+---
+---
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Duran — Economist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1814;
+    --ink-mid: #4a4640;
+    --ink-light: #8a8680;
+    --paper: #f7f4ef;
+    --paper-warm: #ede9e2;
+    --rule: #d4cfc6;
+    --accent: #b8341b;
+    --accent-soft: #f0e8e4;
+    --teal: #1a5c52;
+    --teal-soft: #e3eeec;
+    --amber: #7a5c00;
+    --amber-soft: #f5eedb;
+    --blue: #1a3a6e;
+    --blue-soft: #e4ecf7;
+    --tag-bg: #eceae5;
+    --tag-txt: #4a4640;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --serif: 'Playfair Display', serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --max: 1060px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 0 2rem; }
+  .nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .nav-brand { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; list-style: none; }
+  .nav-links a { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; padding: 0 1.2rem; height: 58px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .page { display: none; }
+  .page.active { display: block; animation: fadeUp .3s ease; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  /* HOME */
+  .hero { max-width: var(--max); margin: 0 auto; padding: 5rem 2rem 4rem; display: grid; grid-template-columns: 1fr 260px; gap: 4rem; align-items: start; }
+  .hero-eyebrow { font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.4rem,5vw,3.4rem); font-weight: 600; line-height: 1.15; letter-spacing: -.01em; margin-bottom: 1.5rem; }
+  .hero-bio { font-size: 1.05rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; max-width: 560px; }
+  .hero-bio strong { font-weight: 500; color: var(--ink); }
+  .hero-bio a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+  .hero-focus { margin-top: 2rem; padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: .92rem; font-weight: 300; color: var(--ink-mid); line-height: 1.75; }
+
+  .profile-card { background: var(--paper-warm); border: 1px solid var(--rule); padding: 1.75rem; position: sticky; top: 80px; }
+  .profile-photo { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; filter: grayscale(15%); margin-bottom: 1.25rem; }
+  .profile-name { font-family: var(--serif); font-size: 1.1rem; margin-bottom: .25rem; }
+  .profile-title { font-size: .8rem; font-weight: 300; color: var(--ink-mid); margin-bottom: 1.25rem; line-height: 1.5; }
+  .profile-links { display: flex; flex-direction: column; gap: .5rem; }
+  .profile-link { display: flex; align-items: center; gap: .6rem; font-family: var(--mono); font-size: .68rem; color: var(--ink-mid); text-decoration: none; transition: color .2s; }
+  .profile-link:hover { color: var(--accent); }
+  .profile-link svg { opacity: .5; flex-shrink: 0; }
+
+  .stats-strip { background: var(--ink); color: var(--paper); padding: 2.5rem 2rem; }
+  .stats-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; display: block; line-height: 1; margin-bottom: .4rem; }
+  .stat-label { font-family: var(--mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,244,239,.5); }
+
+  .fields-section { max-width: var(--max); margin: 0 auto; padding: 4rem 2rem; }
+  .section-label { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content:''; flex:1; height:1px; background: var(--rule); }
+  .fields-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .field-card { padding: 1.75rem; border: 1px solid var(--rule); background: white; position: relative; overflow: hidden; transition: border-color .2s, transform .2s; }
+  .field-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+  .field-card:nth-child(1)::before { background: var(--accent); }
+  .field-card:nth-child(2)::before { background: var(--teal); }
+  .field-card:nth-child(3)::before { background: var(--blue); }
+  .field-card:hover { border-color: var(--ink-light); transform: translateY(-2px); }
+  .field-num { font-family: var(--serif); font-size: 2.8rem; font-weight: 400; color: var(--rule); line-height: 1; margin-bottom: .75rem; }
+  .field-title { font-family: var(--serif); font-size: 1.05rem; margin-bottom: .5rem; }
+  .field-desc { font-size: .85rem; font-weight: 300; color: var(--ink-mid); line-height: 1.65; }
+
+  /* RESEARCH */
+  .research-header { background: var(--ink); color: var(--paper); padding: 4rem 2rem 0; }
+  .research-header-inner { max-width: var(--max); margin: 0 auto; }
+  .page-eyebrow { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(247,244,239,.5); margin-bottom: 1rem; }
+  .research-header h2 { font-family: var(--serif); font-size: 2.4rem; font-weight: 400; margin-bottom: .75rem; }
+  .research-header > .research-header-inner > p { font-size: .95rem; font-weight: 300; color: rgba(247,244,239,.7); max-width: 520px; line-height: 1.75; margin-bottom: 2rem; }
+
+  .rtab-bar { display: flex; border-top: 1px solid rgba(255,255,255,.12); }
+  .rtab { font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: rgba(247,244,239,.5); padding: .85rem 1.5rem; cursor: pointer; border: none; border-bottom: 2px solid transparent; background: none; transition: color .2s, border-color .2s; }
+  .rtab:hover { color: rgba(247,244,239,.85); }
+  .rtab.active { color: var(--paper); border-bottom-color: var(--accent); }
+
+  .filter-bar { background: var(--paper-warm); border-bottom: 1px solid var(--rule); padding: .85rem 2rem; position: sticky; top: 58px; z-index: 90; }
+  .filter-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+  .filter-label-txt { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); margin-right: .4rem; white-space: nowrap; }
+  .filter-btn { font-family: var(--mono); font-size: .65rem; font-weight: 500; background: white; color: var(--ink-mid); border: 1px solid var(--rule); padding: .25rem .65rem; cursor: pointer; transition: all .15s; border-radius: 2px; }
+  .filter-btn:hover { border-color: var(--ink-mid); color: var(--ink); }
+  .filter-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .research-sub { display: none; }
+  .research-sub.active { display: block; }
+
+  .research-body { max-width: var(--max); margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+  .research-section-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: .75rem; border-bottom: 1px solid var(--rule); }
+  .rsec-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; }
+  .rsec-count { font-family: var(--mono); font-size: .7rem; color: var(--ink-light); }
+
+  .paper-card { background: white; border: 1px solid var(--rule); margin-bottom: 1rem; transition: border-color .2s, box-shadow .2s; overflow: hidden; }
+  .paper-card:hover { border-color: var(--ink-mid); box-shadow: 0 2px 16px rgba(26,24,20,.06); }
+  .paper-card.hidden { display: none; }
+
+  .paper-main { padding: 1.4rem 1.75rem; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
+  .paper-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .65rem; }
+  .ptag { font-family: var(--mono); font-size: .58rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 2px; background: var(--tag-bg); color: var(--tag-txt); }
+  .ptag.labor       { background: var(--accent-soft); color: var(--accent); }
+  .ptag.trade       { background: var(--teal-soft);   color: var(--teal); }
+  .ptag.fdi         { background: var(--blue-soft);   color: var(--blue); }
+  .ptag.inequality  { background: #f0ebf7; color: #5a2d8a; }
+  .ptag.ai          { background: #e8f4e8; color: #1a5c2a; }
+  .ptag.regional    { background: #fff0e0; color: #7a4000; }
+  .ptag.macro       { background: #f5f0ff; color: #4a3080; }
+  .ptag.crime       { background: #fce8e8; color: #8a1a1a; }
+  .ptag.gender      { background: #fce8f5; color: #8a1a6a; }
+  .ptag.productivity{ background: #e8f4f0; color: #1a5c42; }
+
+  .paper-title    { font-family: var(--serif); font-size: 1.04rem; font-weight: 400; line-height: 1.4; margin-bottom: .35rem; }
+  .paper-venue    { font-size: .8rem; font-weight: 300; color: var(--ink-light); font-style: italic; margin-bottom: .2rem; }
+  .paper-coauthors{ font-size: .78rem; font-weight: 300; color: var(--ink-light); }
+
+  .status-badge { font-family: var(--mono); font-size: .58rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; padding: .22rem .6rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .status-published { background: var(--teal-soft); color: var(--teal); }
+  .status-wp        { background: var(--amber-soft); color: var(--amber); }
+  .status-submitted { background: var(--accent-soft); color: var(--accent); }
+  .status-draft     { background: var(--tag-bg); color: var(--ink-mid); }
+  .status-revise    { background: var(--blue-soft); color: var(--blue); }
+
+  .toggle-icon { display:flex; align-items:center; justify-content:center; width:22px; height:22px; color: var(--ink-light); font-size:1.1rem; line-height:1; flex-shrink:0; transition: transform .25s; }
+  .paper-card.expanded .toggle-icon { transform: rotate(45deg); }
+
+  .paper-expand { max-height: 0; overflow: hidden; transition: max-height .38s ease; }
+  .paper-expand.open { max-height: 520px; border-top: 1px solid var(--rule); }
+  .paper-expand-inner { padding: 1.25rem 1.75rem 1.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; }
+
+  .paper-abstract-label { font-family: var(--mono); font-size: .62rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: .5rem; }
+  .paper-abstract { font-size: .88rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1rem; }
+  .paper-link { font-family: var(--mono); font-size: .68rem; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; transition: opacity .2s; }
+  .paper-link:hover { opacity: .7; }
+
+  /* Figure panel */
+  .paper-figure { display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; min-width: 160px; max-width: 210px; flex-shrink: 0; }
+  .paper-figure img { width: 100%; border: 1px solid var(--rule); display: block; background: var(--paper-warm); }
+  .paper-figure-caption { font-family: var(--mono); font-size: .56rem; color: var(--ink-light); text-align: right; line-height: 1.45; }
+
+  .no-results { font-size: .9rem; color: var(--ink-light); font-style: italic; padding: 2rem 0; display: none; text-align: center; }
+  .wip-intro { background: var(--amber-soft); border-left: 3px solid var(--amber); padding: 1rem 1.25rem; margin-bottom: 1.75rem; font-size: .85rem; font-weight: 300; color: var(--ink-mid); line-height: 1.7; }
+  .wip-intro strong { font-weight: 500; color: var(--amber); }
+
+  /* TEACHING */
+  .page-header { background: var(--ink); color: var(--paper); padding: 4rem 2rem 3rem; }
+  .page-header-inner { max-width: var(--max); margin: 0 auto; }
+  .page-header .page-eyebrow { color: rgba(247,244,239,.5); }
+  .page-header h2 { font-family: var(--serif); font-size: 2.4rem; font-weight: 400; }
+  .teaching-body { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .teaching-group { margin-bottom: 3rem; }
+  .teaching-group-label { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule); }
+  .teaching-cards { display: flex; flex-direction: column; gap: .75rem; }
+  .teaching-card { background: white; border: 1px solid var(--rule); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 1rem; transition: border-color .2s; }
+  .teaching-card:hover { border-color: var(--ink-mid); }
+  .tc-role { font-family: var(--mono); font-size: .65rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-light); margin-bottom: .35rem; }
+  .tc-title { font-family: var(--serif); font-size: 1rem; margin-bottom: .3rem; }
+  .tc-inst { font-size: .82rem; font-weight: 300; color: var(--ink-mid); margin-bottom: .3rem; }
+  .tc-contents { font-size: .8rem; font-weight: 300; color: var(--ink-light); font-style: italic; }
+  .tc-year { font-family: var(--mono); font-size: .72rem; color: var(--ink-light); white-space: nowrap; padding-top: 3px; }
+  .tc-badge { font-family: var(--mono); font-size: .58rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; padding: .18rem .45rem; border-radius: 2px; margin-left: .4rem; }
+  .tc-badge.grad { background: var(--blue-soft); color: var(--blue); }
+  .tc-badge.ug   { background: var(--teal-soft); color: var(--teal); }
+
+  /* CV */
+  .cv-body { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .cv-section { margin-bottom: 2.5rem; }
+  .cv-section-title { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule); }
+  .cv-item { margin-bottom: 1.25rem; }
+  .cv-item-year { font-family: var(--mono); font-size: .68rem; color: var(--ink-light); margin-bottom: .2rem; }
+  .cv-item-title { font-size: .9rem; font-weight: 500; color: var(--ink); margin-bottom: .15rem; }
+  .cv-item-sub { font-size: .82rem; font-weight: 300; color: var(--ink-mid); line-height: 1.5; }
+  .cv-dl-btn { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--paper); background: var(--ink); border: none; padding: .75rem 1.5rem; cursor: pointer; text-decoration: none; transition: background .2s; margin-top: 1rem; }
+  .cv-dl-btn:hover { background: var(--accent); }
+
+  footer { background: var(--paper-warm); border-top: 1px solid var(--rule); padding: 2rem; }
+  .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-copy { font-family: var(--mono); font-size: .65rem; color: var(--ink-light); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-family: var(--mono); font-size: .65rem; color: var(--ink-light); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; }
+    .profile-card { position: static; }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .fields-grid { grid-template-columns: 1fr; }
+    .paper-expand-inner { grid-template-columns: 1fr; }
+    .paper-figure { max-width: 100%; align-items: flex-start; }
+    .paper-main { grid-template-columns: 1fr; }
+    .cv-body { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" onclick="showPage('home');return false;">Juan Duran</a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home');return false;" class="active" data-page="home">Home</a></li>
+      <li><a href="#" onclick="showPage('research');return false;" data-page="research">Research</a></li>
+      <li><a href="#" onclick="showPage('teaching');return false;" data-page="teaching">Teaching</a></li>
+      <li><a href="#" onclick="showPage('cv');return false;" data-page="cv">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HOME ══ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div>
+      <p class="hero-eyebrow">Postdoctoral Research Fellow · ESRI Dublin</p>
+      <h1>Juan<br>Duran</h1>
+      <p class="hero-bio">I am an applied economist interested in <strong>International, Labor, and Regional Economics</strong>. Currently, I am a <strong>Postdoctoral Research Fellow</strong> at the <a href="https://www.esri.ie/" target="_blank">Economic and Social Research Institute (ESRI)</a> in the area of Trade, Competitiveness, and Foreign Direct Investment.</p>
+      <p class="hero-bio" style="margin-top:1rem">I joined ESRI after completing my PhD in Economics at <a href="https://www.tcd.ie/Economics/" target="_blank">Trinity College Dublin</a>. I received my Master's from the <a href="https://fce.unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>.</p>
+      <div class="hero-focus">My current research examines how <strong>AI adoption</strong>, <strong>digitalisation</strong>, and <strong>exposure to international shocks</strong> influence firm performance, labour markets, and regional economic dynamics.</div>
+    </div>
+    <aside class="profile-card">
+      <img src="https://duranj9.github.io/images/profile2.jpg" alt="Juan Duran" class="profile-photo">
+      <p class="profile-name">Juan Duran</p>
+      <p class="profile-title">Postdoctoral Research Fellow<br>ESRI · Dublin, Ireland</p>
+      <div class="profile-links">
+        <a href="mailto:juan.duranvanegas@esri.ie" class="profile-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>juan.duranvanegas@esri.ie</a>
+        <a href="https://scholar.google.com/citations?user=Y3tn0OkAAAAJ" target="_blank" class="profile-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="4"/><path d="M12 2 3 9h18L12 2z"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-6080-4196" target="_blank" class="profile-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9 7h1.5M9 17V9m3 8V9c1.5 0 4 .5 4 4s-2.5 4-4 4z"/></svg>ORCID</a>
+        <a href="https://www.linkedin.com/in/juan-dur%C3%A1n-757735a1" target="_blank" class="profile-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.5M12 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M12 10v7"/></svg>LinkedIn</a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item"><span class="stat-num">10</span><span class="stat-label">Publications</span></div>
+      <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Work in progress</span></div>
+      <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Courses taught</span></div>
+      <div class="stat-item"><span class="stat-num">3</span><span class="stat-label">Research fields</span></div>
+    </div>
+  </section>
+
+  <section class="fields-section">
+    <div class="section-label">Research fields</div>
+    <div class="fields-grid">
+      <div class="field-card"><div class="field-num">01</div><div class="field-title">International Economics</div><p class="field-desc">Trade liberalization, foreign direct investment, multinational enterprises, and their effects on local markets and regional dynamics.</p></div>
+      <div class="field-card"><div class="field-num">02</div><div class="field-title">Labour Economics</div><p class="field-desc">AI adoption and labour market outcomes, wage inequality, gender gaps, and the impact of technological change on worker well-being.</p></div>
+      <div class="field-card"><div class="field-num">03</div><div class="field-title">Regional Economics</div><p class="field-desc">Spatial equilibrium, regional effects of globalisation, urban amenities, housing costs, and productivity dynamics across regions.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ RESEARCH ══ -->
+<div id="page-research" class="page">
+  <header class="research-header">
+    <div class="research-header-inner">
+      <p class="page-eyebrow">Academic output</p>
+      <h2>Research</h2>
+      <p>Applied economics at the intersection of international trade, labour markets, and technological change. Click any paper to expand the abstract.</p>
+      <div class="rtab-bar">
+        <button class="rtab active" onclick="showRtab('pub',this)">Published papers</button>
+        <button class="rtab" onclick="showRtab('wip',this)">Work in progress</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <span class="filter-label-txt">Filter</span>
+      <button class="filter-btn active" data-tag="all">All</button>
+      <button class="filter-btn" data-tag="trade">Trade</button>
+      <button class="filter-btn" data-tag="fdi">FDI</button>
+      <button class="filter-btn" data-tag="labor">Labor</button>
+      <button class="filter-btn" data-tag="ai">AI</button>
+      <button class="filter-btn" data-tag="inequality">Inequality</button>
+      <button class="filter-btn" data-tag="regional">Regional</button>
+      <button class="filter-btn" data-tag="gender">Gender</button>
+      <button class="filter-btn" data-tag="macro">Macro</button>
+      <button class="filter-btn" data-tag="productivity">Productivity</button>
+      <button class="filter-btn" data-tag="crime">Crime</button>
+    </div>
+  </div>
+
+  <!-- Published -->
+  <div id="rsub-pub" class="research-sub active">
+    <div class="research-body">
+      <div class="research-section-head">
+        <span class="rsec-title">Journal Articles</span>
+        <span class="rsec-count" id="pub-count">5 papers</span>
+      </div>
+      <p class="no-results" id="no-pub">No published papers match the current filter.</p>
+
+      <!-- P1: FDI + Superstar Firms -->
+      <div class="paper-card" data-tags="fdi inequality labor regional">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag fdi">FDI</span><span class="ptag inequality">Inequality</span><span class="ptag labor">Labor</span><span class="ptag regional">Regional</span></div>
+            <div class="paper-title">Inward Foreign Direct Investment, Superstar Firms and Wage Inequality between Firms: Evidence from European Regions</div>
+            <div class="paper-venue">The World Economy, 2025</div>
+            <div class="paper-coauthors">with Iulia Siedschlag</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-published">Published</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Examines the impact of multinational enterprises (MNEs) on wage inequality between firms across European regions. Connects the rise of MNE activity with the emergence of superstar firms and assesses how inward FDI shapes the between-firm wage distribution, finding significant heterogeneity across regions and industries.</div>
+              <a href="https://doi.org/10.1111/twec.70005" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+            <!--
+              FIGURE: upload your image to images/ in the repo and update the src.
+              Example: <img src="images/fig-fdi-superstar.png" alt="Between-firm wage inequality">
+              Remove this block if you don't have a figure yet.
+            -->
+            <div class="paper-figure">
+              <img src="images/fig-fdi-superstar.png" alt="Figure" onerror="this.parentElement.style.display='none'">
+              <span class="paper-figure-caption">Fig. 1 — Between-firm wage inequality, EU regions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P2: Gender / Mexico -->
+      <div class="paper-card" data-tags="trade labor gender regional">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag trade">Trade</span><span class="ptag labor">Labor</span><span class="ptag gender">Gender</span><span class="ptag regional">Regional</span></div>
+            <div class="paper-title">Structural Change and Gender Inequality: Trade, Industry Shifts, and Regional Labor Markets in Mexico</div>
+            <div class="paper-venue">Journal of Regional Science, 2025</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-published">Published</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Studies trade-induced changes in local industry structure and regional gender gaps in employment hours across Mexican Metropolitan Zones. Shows that trade liberalisation shifts industry composition in ways that differentially affect male and female employment, with persistent regional heterogeneity.</div>
+              <a href="https://onlinelibrary.wiley.com/doi/10.1111/jors.70003" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+            <!-- Add figure: <div class="paper-figure"><img src="images/fig-gender.png" alt=""><span class="paper-figure-caption">Caption</span></div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- P3: Spatial equilibrium -->
+      <div class="paper-card" data-tags="trade regional inequality">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag trade">Trade</span><span class="ptag regional">Regional</span><span class="ptag inequality">Inequality</span></div>
+            <div class="paper-title">Spatial Equilibrium and the Regional Effects of Trade Liberalization</div>
+            <div class="paper-venue">Economía LACEA, 2025</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-published">Published</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Studies the local effects of trade liberalisation on college wage premia, housing costs, and urban amenities. Quantifies how exposure to trade shocks reshapes the skill premium, real wages, and quality of life across cities in Mexico.</div>
+              <a href="https://doi.org/10.31389/eco.421" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P4: Trilemma -->
+      <div class="paper-card" data-tags="macro">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag macro">Macro &amp; Finance</span></div>
+            <div class="paper-title">Making Hard Choices: Trilemmas and Dilemmas of Macroeconomic Policy in Latin America</div>
+            <div class="paper-venue">Economía Chilena (Central Bank of Chile), 2019</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-published">Published</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Tests the linearity of the trilemma of macroeconomic policy in Colombia, Chile, Mexico and Peru, providing empirical evidence on whether these economies face a genuine trilemma or rather a dilemma, using threshold models.</div>
+              <a href="https://repositoriodigital.bcentral.cl/xmlui/bitstream/handle/20.500.12580/3607/BCCh-rec-v22n2ago2019p022-038.pdf" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P5: Peru FX -->
+      <div class="paper-card" data-tags="macro">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag macro">Macro &amp; Finance</span></div>
+            <div class="paper-title">Un Análisis de la Efectividad de las Intervenciones Cambiarias en el Perú</div>
+            <div class="paper-venue">Estudios Económicos (Central Bank of Peru), 2016</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-published">Published</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Explores the effectiveness of exchange rate interventions by the Central Reserve Bank of Peru over 2003–2015, using event studies and threshold models. Finds evidence of short-term effectiveness that diminishes at high intervention frequencies.</div>
+              <a href="https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/31/ree-31-durand.pdf" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /rsub-pub -->
+
+  <!-- Work in Progress -->
+  <div id="rsub-wip" class="research-sub">
+    <div class="research-body">
+      <div class="wip-intro"><strong>Status guide:</strong> badges indicate each paper's current stage — <em>first draft</em>, <em>working paper</em>, <em>submitted</em>, or <em>revise &amp; resubmit</em>.</div>
+      <div class="research-section-head">
+        <span class="rsec-title">Work in Progress</span>
+        <span class="rsec-count" id="wip-count">4 papers</span>
+      </div>
+      <p class="no-results" id="no-wip">No working papers match the current filter.</p>
+
+      <!-- W1: AI + Labor -->
+      <div class="paper-card" data-tags="ai labor">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag ai">AI</span><span class="ptag labor">Labor</span></div>
+            <div class="paper-title">The Impact of AI Exposure on Labor Market Outcomes and Worker Well-Being: Insights from Longitudinal Data in Australia</div>
+            <div class="paper-coauthors">with Dora Tuda</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-wp">Working paper</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Analyses the effect of AI exposure at the occupation level on labour market outcomes and worker wellbeing using the Australian HILDA longitudinal dataset. Exploits variation in AI exposure across occupations over time to identify causal effects on employment, wages, hours, and subjective wellbeing.</div>
+              <a href="https://www.esri.ie/publications/the-impact-of-ai-exposure-on-labour-market-outcomes-and-well-being-evidence-from" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+            <!--
+              FIGURE: upload to images/ and update src.
+              <div class="paper-figure"><img src="images/fig-ai-labor.png" alt=""><span class="paper-figure-caption">Caption</span></div>
+            -->
+            <div class="paper-figure">
+              <img src="images/fig-ai-labor.png" alt="Figure" onerror="this.parentElement.style.display='none'">
+              <span class="paper-figure-caption">Fig. 1 — AI exposure index by occupation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- W2: AI + Productivity -->
+      <div class="paper-card" data-tags="ai productivity fdi">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag ai">AI</span><span class="ptag productivity">Productivity</span><span class="ptag fdi">FDI</span></div>
+            <div class="paper-title">Artificial Intelligence and Firm-Level Productivity: Early Evidence from a Small Open Economy</div>
+            <div class="paper-coauthors">with Iulia Siedschlag</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-wp">Working paper</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Analyses the productivity effects of AI adoption using firm-level data from Ireland over 2013–2024. Provides early causal evidence on how AI adoption affects total factor productivity in a small open economy highly integrated into global value chains.</div>
+              <a href="https://www.productivity.ac.uk/wp-content/uploads/2025/12/WP63.pdf" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- W3: Slaughterhouse / Crime -->
+      <div class="paper-card" data-tags="crime labor">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag crime">Crime</span><span class="ptag labor">Labor</span></div>
+            <div class="paper-title">Slaughterhouse Closures and Reduced Crime Rates: Evidence from Colombia</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-draft">First draft</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Examines the effect of slaughterhouse closures on crime rates in Colombian municipalities between 2005 and 2024, exploiting the timing of regulatory closures as a quasi-natural experiment to identify impacts on violent and property crime.</div>
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5394737" target="_blank" class="paper-link">↗ SSRN draft</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- W4: Training + Productivity EU -->
+      <div class="paper-card" data-tags="productivity labor">
+        <div class="paper-main" onclick="togglePaper(this.parentElement)">
+          <div>
+            <div class="paper-tags"><span class="ptag productivity">Productivity</span><span class="ptag labor">Labor</span></div>
+            <div class="paper-title">The Effects of Investment in Education and Training on Productivity Growth in the European Union</div>
+            <div class="paper-coauthors">with Iulia Siedschlag</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.5rem">
+            <span class="status-badge status-wp">Working paper</span>
+            <span class="toggle-icon">+</span>
+          </div>
+        </div>
+        <div class="paper-expand">
+          <div class="paper-expand-inner">
+            <div>
+              <div class="paper-abstract-label">Abstract</div>
+              <div class="paper-abstract">Studies the impact of on-the-job training on labour productivity using EUKLEMS &amp; INTANProd data across EU member states. Identifies the channels through which human capital investment translates into productivity growth and examines heterogeneity across industries and countries.</div>
+              <a href="https://www.esri.ie/publications/the-effects-of-investment-in-education-and-training-on-productivity-growth-in-the" target="_blank" class="paper-link">↗ Download paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /rsub-wip -->
+</div><!-- /research -->
+
+<!-- ══ TEACHING ══ -->
+<div id="page-teaching" class="page">
+  <header class="page-header"><div class="page-header-inner"><p class="page-eyebrow">Academic instruction</p><h2>Teaching</h2></div></header>
+  <div class="teaching-body">
+    <div class="teaching-group">
+      <div class="teaching-group-label">Lecturer</div>
+      <div class="teaching-cards">
+        <div class="teaching-card"><div><div class="tc-role">Lecturer · Undergraduate <span class="tc-badge ug">UG 4th year</span></div><div class="tc-title">Applied Economics</div><div class="tc-inst">Trinity College Dublin — Department of Economics</div><div class="tc-contents">Urban Economics</div></div><div class="tc-year">2022</div></div>
+        <div class="teaching-card"><div><div class="tc-role">Lecturer · Postgraduate <span class="tc-badge grad">MSc</span></div><div class="tc-title">Introductory Mathematics (MSc in Economics)</div><div class="tc-inst">Trinity College Dublin — Department of Economics</div><div class="tc-contents">Optimization, Calculus, Differential Equations</div></div><div class="tc-year">2022</div></div>
+        <div class="teaching-card"><div><div class="tc-role">Lecturer · Undergraduate <span class="tc-badge ug">UG</span></div><div class="tc-title">Microeconomics III</div><div class="tc-inst">Universidad Nacional de Colombia — Department of Economic Sciences</div><div class="tc-contents">Game Theory, Industrial Organization</div></div><div class="tc-year">2016</div></div>
+      </div>
+    </div>
+    <div class="teaching-group">
+      <div class="teaching-group-label">Teaching Assistant</div>
+      <div class="teaching-cards">
+        <div class="teaching-card"><div><div class="tc-role">Teaching Assistant · Postgraduate <span class="tc-badge grad">MSc</span></div><div class="tc-title">Impact Evaluation (MSc in International Development)</div><div class="tc-inst">Trinity College Dublin — Department of Geography</div><div class="tc-contents">Introduction to Stata, Difference-in-differences · Lecturer: Tara Bedi</div></div><div class="tc-year">2022</div></div>
+        <div class="teaching-card"><div><div class="tc-role">Teaching Assistant · Undergraduate <span class="tc-badge ug">UG 2nd year</span></div><div class="tc-title">Intermediate Economics</div><div class="tc-inst">Trinity College Dublin — Department of Economics</div><div class="tc-contents">Consumer and production theory · Lecturer: Francis O'Toole</div></div><div class="tc-year">2020–21</div></div>
+        <div class="teaching-card"><div><div class="tc-role">Teaching Assistant · Undergraduate <span class="tc-badge ug">UG 2nd year</span></div><div class="tc-title">Mathematical &amp; Statistical Methods</div><div class="tc-inst">Trinity College Dublin — Department of Economics</div><div class="tc-contents">Calculus, optimization, statistical inference · Lecturers: Guariso, Wycherley, Fontana</div></div><div class="tc-year">2018–22</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CV ══ -->
+<div id="page-cv" class="page">
+  <header class="page-header"><div class="page-header-inner"><p class="page-eyebrow">Curriculum Vitae</p><h2>CV</h2></div></header>
+  <div class="cv-body">
+    <div>
+      <div class="cv-section">
+        <div class="cv-section-title">Education</div>
+        <div class="cv-item"><div class="cv-item-year">2018–2023</div><div class="cv-item-title">PhD in Economics</div><div class="cv-item-sub">Trinity College Dublin</div></div>
+        <div class="cv-item"><div class="cv-item-year">2014–2016</div><div class="cv-item-title">MSc in Economics</div><div class="cv-item-sub">Universidad Nacional de Colombia (UNAL)</div></div>
+        <div class="cv-item"><div class="cv-item-year">Earlier</div><div class="cv-item-title">BA in Economics</div><div class="cv-item-sub">Universidad Nacional de Colombia (UNAL)</div></div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-section-title">Positions</div>
+        <div class="cv-item"><div class="cv-item-year">2023 – present</div><div class="cv-item-title">Postdoctoral Research Fellow</div><div class="cv-item-sub">ESRI · Dublin, Ireland — Trade, Competitiveness &amp; FDI</div></div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-section-title">Fields</div>
+        <div class="cv-item"><div class="cv-item-title">International Economics</div><div class="cv-item-sub">Trade, FDI, multinational enterprises</div></div>
+        <div class="cv-item"><div class="cv-item-title">Labour Economics</div><div class="cv-item-sub">AI &amp; automation, wage inequality, well-being</div></div>
+        <div class="cv-item"><div class="cv-item-title">Regional Economics</div><div class="cv-item-sub">Spatial equilibrium, urban amenities, productivity</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="cv-section">
+        <div class="cv-section-title">Selected Publications</div>
+        <div class="cv-item"><div class="cv-item-year">2025 · The World Economy</div><div class="cv-item-title">Inward FDI, Superstar Firms and Wage Inequality</div><div class="cv-item-sub">with Iulia Siedschlag</div></div>
+        <div class="cv-item"><div class="cv-item-year">2025 · Journal of Regional Science</div><div class="cv-item-title">Structural Change and Gender Inequality in Mexico</div></div>
+        <div class="cv-item"><div class="cv-item-year">2025 · Economía LACEA</div><div class="cv-item-title">Spatial Equilibrium and Regional Effects of Trade Liberalization</div></div>
+      </div>
+      <div class="cv-section">
+        <div class="cv-section-title">Profiles &amp; Contact</div>
+        <div class="cv-item"><div class="cv-item-title"><a href="https://scholar.google.com/citations?user=Y3tn0OkAAAAJ" target="_blank" style="color:var(--accent);text-decoration:none">Google Scholar ↗</a></div></div>
+        <div class="cv-item"><div class="cv-item-title"><a href="https://orcid.org/0000-0002-6080-4196" target="_blank" style="color:var(--accent);text-decoration:none">ORCID ↗</a></div></div>
+        <div class="cv-item"><div class="cv-item-sub">ESRI, Whitaker Square, Sir John Rogerson's Quay, Dublin 2</div></div>
+        <div class="cv-item"><div class="cv-item-title"><a href="mailto:juan.duranvanegas@esri.ie" style="color:var(--accent);text-decoration:none">juan.duranvanegas@esri.ie</a></div></div>
+        <a href="https://duranj9.github.io/files/JD_CV%20(1).pdf" target="_blank" class="cv-dl-btn">↓ Download full CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2026 Juan Duran · ESRI Dublin</span>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=Y3tn0OkAAAAJ" target="_blank">Scholar</a>
+      <a href="https://orcid.org/0000-0002-6080-4196" target="_blank">ORCID</a>
+      <a href="https://www.linkedin.com/in/juan-dur%C3%A1n-757735a1" target="_blank">LinkedIn</a>
+      <a href="mailto:juan.duranvanegas@esri.ie">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('[data-page]').forEach(a => a.classList.remove('active'));
+  const link = document.querySelector('[data-page="' + id + '"]');
+  if (link) link.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  resetFilter();
+}
+
+function showRtab(id, btn) {
+  document.querySelectorAll('.research-sub').forEach(s => s.classList.remove('active'));
+  document.getElementById('rsub-' + id).classList.add('active');
+  document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  resetFilter();
+}
+
+function togglePaper(card) {
+  const isOpen = card.classList.contains('expanded');
+  document.querySelectorAll('.paper-card.expanded').forEach(c => {
+    c.classList.remove('expanded');
+    c.querySelector('.paper-expand').classList.remove('open');
+  });
+  if (!isOpen) {
+    card.classList.add('expanded');
+    card.querySelector('.paper-expand').classList.add('open');
+  }
+}
+
+function resetFilter() {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.filter-btn[data-tag="all"]').classList.add('active');
+  applyFilter('all');
+}
+
+function applyFilter(tag) {
+  const activeSub = document.querySelector('.research-sub.active');
+  if (!activeSub) return;
+  let visible = 0;
+  activeSub.querySelectorAll('.paper-card').forEach(card => {
+    const match = tag === 'all' || card.dataset.tags.split(' ').includes(tag);
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+  const isPub = activeSub.id === 'rsub-pub';
+  const countEl = document.getElementById(isPub ? 'pub-count' : 'wip-count');
+  const noEl = document.getElementById(isPub ? 'no-pub' : 'no-wip');
+  if (countEl) countEl.textContent = visible + (visible === 1 ? ' paper' : ' papers');
+  if (noEl) noEl.style.display = visible === 0 ? 'block' : 'none';
+  document.querySelectorAll('.paper-card.expanded').forEach(c => {
+    c.classList.remove('expanded');
+    c.querySelector('.paper-expand').classList.remove('open');
+  });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter(btn.dataset.tag);
+  });
+});
+</script>
+</body>
+</html>
